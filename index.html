@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    <!-- <form> -->
+        <div class="dropdown" size="5">
+            <input type="input" id="myInput" onclick="myFunction()" oninput="filterFunction()" oninvalid="displayOff()"
+                placeholder="Guess a Pal..."></input>
+            <div id="myDropdown" class="dropdown-content" size="5">
+                <a onclick="guessPal('0')">Lamball</a>
+                <a onclick="guessPal('1')">Cattiva</a>
+                <a onclick="guessPal('2')">Chikipi</a>
+                <a onclick="guessPal('3')">Lifmunk</a>
+                <a onclick="guessPal('4')">Foxparks</a>
+                <a onclick="guessPal('5')">Fuack</a>
+                <a onclick="guessPal('6')">Sparkit</a>
+                <a onclick="guessPal('7')">Tanzee</a>
+                <a onclick="guessPal('8')">Rooby</a>
+                <a onclick="guessPal('9')">Pengullet</a>
+                <a onclick="guessPal('10')">Penking</a>
+                <a onclick="guessPal('11')">Jolthog Cryst</a>
+                <a onclick="guessPal('12')">Jolthog</a>
+                <a onclick="guessPal('13')">Gumoss</a>
+                <a onclick="guessPal('14')">Gumoss (Flower)</a>
+                <a onclick="guessPal('15')">Vixy</a>
+                <a onclick="guessPal('16')">Hoocrates</a>
+                <a onclick="guessPal('17')">Teafant</a>
+                <a onclick="guessPal('18')">Depresso</a>
+                <a onclick="guessPal('19')">Cremis</a>
+                <a onclick="guessPal('20')">Daedream</a>
+                <a onclick="guessPal('21')">Rushoar</a>
+                <a onclick="guessPal('22')">Nox</a>
+                <a onclick="guessPal('23')">Fuddler</a>
+                <a onclick="guessPal('24')">Killamari</a>
+                <a onclick="guessPal('25')">Mau Cryst</a>
+                <a onclick="guessPal('26')">Mau</a>
+                <a onclick="guessPal('27')">Celaray</a>
+                <a onclick="guessPal('28')">Direhowl</a>
+                <a onclick="guessPal('29')">Tocotoco</a>
+                <a onclick="guessPal('30')">Flopie</a>
+                <a onclick="guessPal('31')">Mozzarina</a>
+                <a onclick="guessPal('32')">Bristla</a>
+                <a onclick="guessPal('33')">Gobfin</a>
+                <a onclick="guessPal('34')">Gobfin Ignis</a>
+                <a onclick="guessPal('35')">Hangyu</a>
+                <a onclick="guessPal('36')">Hangyu Cryst</a>
+                <a onclick="guessPal('37')">Mossanda Lux</a>
+                <a onclick="guessPal('38')">Mossanda</a>
+                <a onclick="guessPal('39')">Woolipop</a>
+                <a onclick="guessPal('40')">Caprity</a>
+                <a onclick="guessPal('41')">Melpaca</a>
+                <a onclick="guessPal('42')">Eikthyrdeer Terra</a>
+                <a onclick="guessPal('43')">Eikthyrdeer</a>
+                <a onclick="guessPal('44')">Nitewing</a>
+                <a onclick="guessPal('45')">Ribunny</a>
+                <a onclick="guessPal('46')">Incineram Noct</a>
+                <a onclick="guessPal('47')">Incineram</a>
+                <a onclick="guessPal('48')">Cinnamoth</a>
+                <a onclick="guessPal('49')">Arsox</a>
+                <a onclick="guessPal('50')">Dumud</a>
+                <a onclick="guessPal('51')">Cawgnito</a>
+                <a onclick="guessPal('52')">Leezpunk</a>
+                <a onclick="guessPal('53')">Leezpunk Ignis</a>
+                <a onclick="guessPal('54')">Loupmoon</a>
+                <a onclick="guessPal('55')">Galeclaw</a>
+                <a onclick="guessPal('56')">Robinquill Terra</a>
+                <a onclick="guessPal('57')">Robinquill</a>
+                <a onclick="guessPal('58')">Gorirat</a>
+                <a onclick="guessPal('59')">Beegarde</a>
+                <a onclick="guessPal('60')">Elizabee</a>
+                <a onclick="guessPal('61')">Grintale</a>
+                <a onclick="guessPal('62')">Swee</a>
+                <a onclick="guessPal('63')">Sweepa</a>
+                <a onclick="guessPal('64')">Chillet</a>
+                <a onclick="guessPal('65')">Univolt</a>
+                <a onclick="guessPal('66')">Foxcicle</a>
+                <a onclick="guessPal('67')">Pyrin Noct</a>
+                <a onclick="guessPal('68')">Pyrin</a>
+                <a onclick="guessPal('69')">Reindrix</a>
+                <a onclick="guessPal('70')">Rayhound</a>
+                <a onclick="guessPal('71')">Kitsun</a>
+                <a onclick="guessPal('72')">Dazzi</a>
+                <a onclick="guessPal('73')">Lunaris</a>
+                <a onclick="guessPal('74')">Dinossom Lux</a>
+                <a onclick="guessPal('75')">Dinossom</a>
+                <a onclick="guessPal('76')">Surfent Terra</a>
+                <a onclick="guessPal('77')">Surfent</a>
+                <a onclick="guessPal('78')">Maraith</a>
+                <a onclick="guessPal('79')">Digtoise</a>
+                <a onclick="guessPal('80')">Tombat</a>
+                <a onclick="guessPal('81')">Lovander</a>
+                <a onclick="guessPal('82')">Flambelle</a>
+                <a onclick="guessPal('83')">Vanwyrm Cryst</a>
+                <a onclick="guessPal('84')">Vanwyrm</a>
+                <a onclick="guessPal('85')">Bushi</a>
+                <a onclick="guessPal('86')">Beakon</a>
+                <a onclick="guessPal('87')">Ragnahawk</a>
+                <a onclick="guessPal('88')">Katress</a>
+                <a onclick="guessPal('89')">Wixen</a>
+                <a onclick="guessPal('90')">Verdash</a>
+                <a onclick="guessPal('91')">Vaelet</a>
+                <a onclick="guessPal('92')">Sibelyx</a>
+                <a onclick="guessPal('93')">Elphidran Aqua</a>
+                <a onclick="guessPal('94')">Elphidran</a>
+                <a onclick="guessPal('95')">Kelpsea</a>
+                <a onclick="guessPal('96')">Kelpsea Ignis</a>
+                <a onclick="guessPal('97')">Azurobe</a>
+                <a onclick="guessPal('98')">Cryolinx</a>
+                <a onclick="guessPal('99')">Blazehowl Noct</a>
+                <a onclick="guessPal('100')">Blazehowl</a>
+                <a onclick="guessPal('101')">Relaxaurus Lux</a>
+                <a onclick="guessPal('102')">Relaxaurus</a>
+                <a onclick="guessPal('103')">Broncherry Aqua</a>
+                <a onclick="guessPal('104')">Broncherry</a>
+                <a onclick="guessPal('105')">Petallia</a>
+                <a onclick="guessPal('106')">Ice Reptyro</a>
+                <a onclick="guessPal('107')">Reptyro</a>
+                <a onclick="guessPal('108')">Ice Kingpaca</a>
+                <a onclick="guessPal('109')">Kingpaca</a>
+                <a onclick="guessPal('110')">Mammorest Cryst</a>
+                <a onclick="guessPal('111')">Mammorest</a>
+                <a onclick="guessPal('112')">Wumpo</a>
+                <a onclick="guessPal('113')">Wumpo Botan</a>
+                <a onclick="guessPal('114')">Warsect</a>
+                <a onclick="guessPal('115')">Fenglope</a>
+                <a onclick="guessPal('116')">Felbat</a>
+                <a onclick="guessPal('117')">Quivern</a>
+                <a onclick="guessPal('118')">Blazamut</a>
+                <a onclick="guessPal('119')">Helzephyr</a>
+                <a onclick="guessPal('120')">Astegon</a>
+                <a onclick="guessPal('121')">Menasting</a>
+                <a onclick="guessPal('122')">Anubis</a>
+                <a onclick="guessPal('123')">Jormuntide</a>
+                <a onclick="guessPal('124')">Jormuntide Ignis</a>
+                <a onclick="guessPal('125')">Suzaku Aqua</a>
+                <a onclick="guessPal('126')">Suzaku</a>
+                <a onclick="guessPal('127')">Grizzbolt</a>
+                <a onclick="guessPal('128')">Lyleen Noct</a>
+                <a onclick="guessPal('129')">Lyleen</a>
+                <a onclick="guessPal('130')">Faleris</a>
+                <a onclick="guessPal('131')">Orserk</a>
+                <a onclick="guessPal('132')">Shadowbeak</a>
+                <a onclick="guessPal('133')">Paladius</a>
+                <a onclick="guessPal('134')">Necromus</a>
+                <a onclick="guessPal('135')">Frostallion Noct</a>
+                <a onclick="guessPal('136')">Frostallion</a>
+                <a onclick="guessPal('137')">Jetragon</a>
+            </div>
+        </div>
+    <!-- </form> -->
+
+    <div class="grid-container">
+        <div id="cell">Name</div>
+        <div id="cell">Number</div>
+        <div id="cell">Type 1</div>
+        <div id="cell">Type 2</div>
+        <div id="cell">Kindling</div>
+        <div id="cell">Watering</div>
+        <div id="cell">Planting</div>
+        <div id="cell">Electric</div>
+        <div id="cell">Handiwork</div>
+        <div id="cell">Gathering</div>
+        <div id="cell">Mining</div>
+        <div id="cell">Medicine</div>
+        <div id="cell">Cooling</div>
+        <div id="cell">Lumbering</div>
+        <div id="cell">Transporting</div>
+        <div id="cell">Farming</div>
+    </div>
+    <hr>
+
+    <div class="congrats-grid">
+        <div class="congrats-cell">CONGRATULATIONS</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
