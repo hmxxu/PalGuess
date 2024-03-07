@@ -1,0 +1,174 @@
+body {
+    background-color: #999;
+    font-family: "Bowlby One SC";
+}
+
+#content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.grid-container {
+  
+    padding-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    /* Set grid items in a single row */
+    justify-content: center;
+    /* Center the items horizontally */
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    grid-gap: 0;
+    /* grid-gap: 10px; */
+}
+
+.cell {
+    margin-top: 10px;
+    background-color: #ddd;
+    /* border: 1px solid #999; */
+    padding: 10px;
+    text-align: center;
+    /* width: 100px; */
+    height: 75px;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+}
+
+.cell p {
+    font-size: 14px;
+    margin: 0; /* Remove default margin */
+}
+
+.grid-container>div {
+
+    padding: 5px;
+    min-height: 40px;
+    min-width: 60px;
+    text-align: center;
+}
+
+.congrats-grid {
+    display: none; /* Initially hide the grid */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set height to cover entire viewport */
+}
+
+.congrats-cell {
+    background-color: #00ff00; /* Green background */
+    color: #ffffff; /* White text color */
+    font-size: 24px; /* Adjust font size as needed */
+    padding: 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* #grid-number {
+    grid-area: number;
+    background-color: red;
+}
+
+#grid-type1 {
+    grid-area: type1;
+    background-color: red;
+}
+
+#grid-type2 {
+    grid-area: type2;
+    background-color: red;
+}
+
+#grid-kindling {
+    grid-area: Kindling;
+    background-color: red;
+}
+
+#grid-watering {
+    grid-area: Watering;
+}
+
+#grid-planting {
+    grid-area: Electric;
+}
+
+#grid-handiwork {
+    grid-area: Handiwork;
+}
+
+#grid-gathering {
+    grid-area: Gathering;
+}
+
+#grid-lumbering {
+    grid-area: Lumbering;
+}
+
+#grid-mining {
+    grid-area: Mining;
+}
+
+#grid-medicine {
+    grid-area: Medicine;
+}
+
+#grid-Cooling {
+    grid-area: Cooling;
+}
+
+#grid-transporting {
+    grid-area: Transporting;
+}
+
+#grid-farming {
+    grid-area: Farming;
+} */
+
+#myInput:focus {
+    outline: 3px solid #ddd;
+}
+
+#myInput {
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.dropdown {
+    position: relative;
+    display: inline;
+}
+
+.dropdown-content {
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 167px;
+    border: 1px solid #ddd;
+    z-index: 2;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+.none {
+    display: none;
+}
