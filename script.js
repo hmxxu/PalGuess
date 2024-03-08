@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     loadPalData();
 });
 
+// Toggles drop down off when clicked out
 window.onclick = function(event) { // click
     if (!event.target.matches('#myInput')) { // click out
         var dropdowns = document.getElementsByClassName("dropdown-content"); // look for dropdown
@@ -18,17 +19,7 @@ window.onclick = function(event) { // click
     }
 }
 
-
-window.onload = function() {
-    var dropdownItems = document.querySelectorAll('.dropdown-content a'); // store item
-
-    dropdownItems.forEach(function(item) { // check each item
-        item.addEventListener('click', function() { // check for click
-            document.getElementById('myInput').value = ''; // Clear the input field
-        });
-    });
-}
-
+// Loads data on all pals from a JSON file
 async function loadPalData() {
     secretPal = Math.floor(Math.random() * 138);
     await fetch('./PalData.json')
@@ -40,19 +31,22 @@ async function loadPalData() {
             console.error('Error fetching JSON:', error);
         });
     
-    console.log("Secret Pal: " + secretPal);
+    console.log("Secret Pal: " + palData[secretPal].Name);
     console.log(palData[secretPal]);
-
 }
 
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+// Toggles drop down on
+function dropDownOn() {
+    if (!won) document.getElementById("myDropdown").classList.toggle("show");
 }
 
-function displayOff() {
+// Toggles drop down off
+function dropDownOff() {
     document.getElementById("myDropdown").classList.toggle("none");
 }
 
+
+// Filter inputs for search bar
 function filterFunction() {
     var input, filter, ul, li, a, i;
     input = document.getElementById("myInput");
@@ -69,12 +63,18 @@ function filterFunction() {
     }
 }
 
+
+// Compares a given attribute of 2 pals are return a string
 function compareAttributes(attribute, input, secret) {
     return (palData[input][attribute] === palData[secret][attribute]) ? "✅" :
            (palData[input][attribute] < palData[secret][attribute]) ? "⬆️" : "⬇️";
 }
 
 function guessPal(inputPal) {
+    // Clear search bar
+    document.getElementById("myInput").value = '';
+
+    // Sets attribute
     num = (Number(palData[inputPal]["Number"]) === Number(palData[secretPal]["Number"])) ? "✅" :
     (Number(palData[inputPal]["Number"]) < Number(palData[secretPal]["Number"])) ? "⬆️" : "⬇️";
     t1 = (palData[inputPal]["Type 1"] === palData[secretPal]["Type 1"]) ? "✅" : "❌";
@@ -101,70 +101,76 @@ function guessPal(inputPal) {
     var cellContent = [pal.Name, pal.Number , pal['Type 1'], pal['Type 2'], pal.Kindling, pal.Watering, pal.Planting,pal.Electric, pal.Handiwork, pal.Gathering, pal.Mining, pal.Medicine, pal.Cooling, pal.Lumbering, pal.Transporting, pal.Farming];
     var cellContent2 = ["", num, t1, t2, kin, wat, pla, ele, han, gat, lum, min, med, coo, tra, far];
 
-    // Loop through the cell content and create div elements for each
-    cellContent.forEach(function (content, index) {
+    // for each attribute create a cell abd append to grid
+    for (let index = 0; index < cellContent.length; index++) {
         var cell = document.createElement("div"); 
         var p = document.createElement("p");
         cell.className = "cell";
-        cell.textContent = content; // name content etc
-        var cell2 = cellContent2[index];
-        p.textContent = cell2;
+        cell.textContent = cellContent[index] + ' ' + cellContent2[index];
         cell.appendChild(p);
         newGridContainer.appendChild(cell);
-    });
+    }
 
     // Append the new grid container to the body
     document.body.appendChild(newGridContainer);
 
-    if (secretPal == inputPal) {
-        won = true;
-        var containerDiv = document.createElement('div');
-
-        // Create a div for the congratulatory message
-        var congratsDiv = document.createElement('div');
-        congratsDiv.style.textAlign = 'center';
-        congratsDiv.style.border = '2px solid #000'; // 2px black border
-        congratsDiv.style.backgroundColor = '#f0f0f0'; // Light gray background color
-        congratsDiv.style.padding = '10px'; // Padding for better appearance
-
-        // Create an image element
-        var image = document.createElement('img');
-        image.src = 'PalImages/image_'+ String(secretPal+1) +'.png'; // Replace with the actual path to your image
-        image.alt = 'Congrats Image'; // Alt text for accessibility
-        // Style the image
-        image.style.width = '100px'; // Adjust the width as needed
-        image.style.height = '100px'; // Adjust the height as needed
-        image.style.borderRadius = '50%'; // Make it circular
-
-        // Create a text element
-        
-        var textNode = document.createElement('span');
-        textNode.textContent = ' The pal was ' + palData[secretPal]["Name"] + ' good job!';
-        textNode.style.fontSize = '50px'; 
-
-        // Append the image and text to the congratsDiv
-        congratsDiv.appendChild(image);
-        congratsDiv.appendChild(textNode);
-
-        // Append the congratsDiv to the container
-        containerDiv.appendChild(congratsDiv);
-
-        // Create a retry button
-        var retryButton = document.createElement('button');
-        retryButton.textContent = 'Play Again';
-        retryButton.style.marginTop = '10px'; // Add some space between the congratulatory message and the button
-        retryButton.addEventListener('click', function () {
-            location.reload();
-        });
-
-        // Append the retry button to the container
-        containerDiv.appendChild(retryButton);
-
-        // Append the container div to the body
-        document.body.appendChild(containerDiv);
-    }
+    if (secretPal == inputPal) playerWon();
 }
 
+function playerWon(){
+    won = true;
+    var containerDiv = document.createElement('div');
+
+    // Create a div for the congratulations message
+    var congratsDiv = document.createElement('div');
+    congratsDiv.style.textAlign = 'center';
+    congratsDiv.style.border = '2px solid #000';
+    congratsDiv.style.backgroundColor = '#2e3d4b';
+    congratsDiv.style.padding = '10px';
+    congratsDiv.style.paddingTop = '20px';
+    congratsDiv.style.marginTop = '20px';
+    congratsDiv.style.display = 'flex';
+    congratsDiv.style.flexDirection = 'column';
+    congratsDiv.style.alignItems = 'center';
+
+    // Grab image of secret pal
+    var image = document.createElement('img');
+    image.src = 'PalImages/image_' + String(secretPal + 1) + '.png';
+    image.alt = 'Congrats Image';
+    // Style the image
+    image.style.border = '2px solid #000';
+    image.style.width = '100px';
+    image.style.height = '100px';
+    image.style.borderRadius = '50%';
+
+    // Create a text element
+    var textNode = document.createElement('span');
+    textNode.textContent = ' The pal was ' + palData[secretPal]["Name"] + ' good job!';
+    textNode.style.fontSize = '50px';
+
+    // Append the image and text to the congratsDiv
+    congratsDiv.appendChild(image);
+    congratsDiv.appendChild(textNode);
+
+    // Append the congratsDiv to the container
+    containerDiv.appendChild(congratsDiv);
+
+    // Create a retry button
+    var retryButton = document.createElement('button');
+    retryButton.textContent = 'Play Again';
+    retryButton.style.marginTop = '10px'; // Add some space between the congratulatory message and the button
+    retryButton.addEventListener('click', function () {
+        location.reload();
+    });
+
+    // Append the retry button to the container
+    containerDiv.appendChild(retryButton);
+
+    // Append the container div to the body
+    document.body.appendChild(containerDiv);
+}
+
+// cell class for holding pal data
 class cell {
     constructor(Name,Number,Type1,Type2,Kindling,Watering,Planting,Electric,Handiwork,Gathering,Lumbering,Mining,Medicine,Cooling,Transporting,Farming) {
         this.Name = Name;

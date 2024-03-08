@@ -1,6 +1,7 @@
 body {
-    background-color: #999;
-    font-family: "Bowlby One SC";
+    background-color: #23303c;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #content {
@@ -9,7 +10,7 @@ body {
 }
 
 .grid-container {
-  
+    /* border: 1px solid #999; */
     padding-top: 25px;
     display: grid;
     grid-template-columns: repeat(16, 1fr);
@@ -25,7 +26,7 @@ body {
 
 .cell {
     margin-top: 10px;
-    background-color: #ddd;
+    background-color: #2e3d4b;
     /* border: 1px solid #999; */
     padding: 10px;
     text-align: center;
@@ -63,66 +64,6 @@ body {
     padding: 20px; /* Adjust padding as needed */
     border-radius: 10px; /* Rounded corners */
 }
-
-/* #grid-number {
-    grid-area: number;
-    background-color: red;
-}
-
-#grid-type1 {
-    grid-area: type1;
-    background-color: red;
-}
-
-#grid-type2 {
-    grid-area: type2;
-    background-color: red;
-}
-
-#grid-kindling {
-    grid-area: Kindling;
-    background-color: red;
-}
-
-#grid-watering {
-    grid-area: Watering;
-}
-
-#grid-planting {
-    grid-area: Electric;
-}
-
-#grid-handiwork {
-    grid-area: Handiwork;
-}
-
-#grid-gathering {
-    grid-area: Gathering;
-}
-
-#grid-lumbering {
-    grid-area: Lumbering;
-}
-
-#grid-mining {
-    grid-area: Mining;
-}
-
-#grid-medicine {
-    grid-area: Medicine;
-}
-
-#grid-Cooling {
-    grid-area: Cooling;
-}
-
-#grid-transporting {
-    grid-area: Transporting;
-}
-
-#grid-farming {
-    grid-area: Farming;
-} */
 
 #myInput:focus {
     outline: 3px solid #ddd;

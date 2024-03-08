@@ -4,13 +4,11 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-
-
 </head>
 <body>
     <!-- <form> -->
         <div class="dropdown" size="5">
-            <input type="input" id="myInput" onclick="myFunction()" oninput="filterFunction()" oninvalid="displayOff()"
+            <input type="input" id="myInput" onclick="dropDownOn()" oninput="filterFunction()" oninvalid="dropDownOff()"
                 placeholder="Guess a Pal..."></input>
             <div id="myDropdown" class="dropdown-content" size="5">
                 <a onclick="guessPal('0')">Lamball</a>
