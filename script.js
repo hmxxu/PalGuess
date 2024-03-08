@@ -99,10 +99,31 @@ function guessPal(inputPal) {
     // Generate the content for the grid container based on the selected value
     var pal = palData[inputPal];
     var cellContent = [pal.Name, pal.Number , pal['Type 1'], pal['Type 2'], pal.Kindling, pal.Watering, pal.Planting,pal.Electric, pal.Handiwork, pal.Gathering, pal.Mining, pal.Medicine, pal.Cooling, pal.Lumbering, pal.Transporting, pal.Farming];
-    var cellContent2 = ["", num, t1, t2, kin, wat, pla, ele, han, gat, lum, min, med, coo, tra, far];
+    var cellContent2 = ["Image Here", num, t1, t2, kin, wat, pla, ele, han, gat, lum, min, med, coo, tra, far];
+
+
+    // Name of guess
+    var cell = document.createElement("div"); 
+    var p = document.createElement("p");
+    cell.className = "cell";
+    cell.textContent = cellContent[0];
+    
+    // Add image below pal name
+    var img = document.createElement("img");
+    img.src = 'PalImages/image_' + String(Number(inputPal) + 1) + '.png';
+    img.alt = 'Pal Image';
+    img.style.borderRadius = '50%';
+    img.style.border = '2px solid #000';
+    img.style.width = '50px';
+    img.style.height = '50px';
+
+    cell.appendChild(p);
+    cell.appendChild(img);
+
+    newGridContainer.appendChild(cell);
 
     // for each attribute create a cell abd append to grid
-    for (let index = 0; index < cellContent.length; index++) {
+    for (let index = 1; index < cellContent.length; index++) {
         var cell = document.createElement("div"); 
         var p = document.createElement("p");
         cell.className = "cell";
