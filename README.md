@@ -1,2 +1,2 @@
 # PalGuess
-Guessing game for Pal from PalWorld
+PalGuess is a guessing game for Pal from PalWorld inspired by games like Wordle and Poeltl.
